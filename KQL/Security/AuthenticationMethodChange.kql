@@ -1,0 +1,47 @@
+Jan Bakker Idea:
+https://janbakker.tech/microsoft-365-end-user-notifications-for-changes-in-authentication-methods/
+
+How to do this with LAW and Alerting
+
+
+AuditLogs
+| where Category == "UserManagement"
+| summarize count() by ActivityDisplayName, OperationName
+| order by count_ desc
+
+
+
+let UserUPN = "jhope”@ssvabaseline.onmicrosoft.com;
+AuditLogs
+| where
+    InitiatedBy.user.userPrincipalName =~ UserUPN
+    or TargetResources has UserUPN
+
+
+AuditLogs
+| where Category == "UserManagement"
+| where OperationName in (
+    "Add authentication method",
+    "Delete authentication method",
+    "Admin registered security info",
+    "Update user",
+    "Admin deleted security info"
+    )
+| extend
+    InitiatedByUPN = tostring(InitiatedBy.user.userPrincipalName),
+    InitiatedByApp = tostring(InitiatedBy.app.displayName),
+    TargetUser = tostring(TargetResources[0].userPrincipalName),
+    AuthMethod = tostring(TargetResources[0].modifiedProperties[0].newValue),
+    Operation = OperationName,
+    ResultDescription = tostring(ResultDescription)
+| project
+    TimeGenerated,
+    Operation,
+    TargetUser,
+    ResultDescription,
+    AuthMethod,
+    InitiatedByUPN,
+    InitiatedByApp,
+    CorrelationId,
+    Result
+| order by TimeGenerated desc

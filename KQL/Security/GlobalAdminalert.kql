@@ -1,0 +1,27 @@
+//General alert showing all activity
+SigninLogs
+| where UserPrincipalName contains "strategic" //replace with the breakglass account username
+| project TimeGenerated, UserPrincipalName, IPAddress, DeviceDetail, countryOrRegion = tostring(LocationDetails.countryOrRegion), city = tostring(LocationDetails.city)
+
+
+// Higher level alert for locations not in US
+SigninLogs
+| where UserPrincipalName contains "globaladmin" //replace with the breakglass account username
+| where tostring(LocationDetails.countryOrRegion) !in ("US")
+| project TimeGenerated, UserPrincipalName, IPAddress, countryOrRegion = tostring(LocationDetails.countryOrRegion)
+
+
+
+Trusted Countries or IPS
+//This query will exclude sign-ins from both trusted IP addresses and trusted countries.
+let trustedIPs = dynamic(["192.168.1.1", "203.0.113.5"]); // Replace with your trusted IP addresses
+let trustedCountries = dynamic(["US", "CA", "GB"]); // Replace with your trusted countries
+SigninLogs
+| where UserPrincipalName contains "user@acme.com" // replace with the breakglass account username
+| where IPAddress !in (trustedIPs) and tostring(LocationDetails.countryOrRegion) !in (trustedCountries)
+| project TimeGenerated, UserPrincipalName, IPAddress, countryOrRegion = tostring(LocationDetails.countryOrRegion)
+| order by TimeGenerated desc
+
+
+
+
