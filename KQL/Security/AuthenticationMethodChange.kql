@@ -11,7 +11,7 @@ AuditLogs
 
 
 
-let UserUPN = "jhope”@ssvabaseline.onmicrosoft.com;
+let UserUPN = "jhope”@acmebaseline.onmicrosoft.com;
 AuditLogs
 | where
     InitiatedBy.user.userPrincipalName =~ UserUPN
