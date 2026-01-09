@@ -16,14 +16,14 @@ operational or security workflows*.
 
     Security/
     │
-    ├── AVDUserUsage.kql
-    ├── AVDuserconnectionsquery.ps1
-    ├── AzureAlerts.KQL
-    ├── AzureSubKQL.md
-    ├── EntAppDiscovery.ps1
-    ├── KQLSigninLogs.md
-    ├── KQLreadme.md
-    └── readme.md
+    ├── AuthenticationMethodChange.kql
+    ├── ConditionalAccessChange.kql
+    ├── EntraCredLeak.md
+    ├── GlobalAdminAlert.kql
+    ├── GlobalAdminElevationAlert.md
+    ├── MonitorAlerts.kql
+    ├── ResourceLockDelete.kql
+    
 
 ------------------------------------------------------------------------
 
