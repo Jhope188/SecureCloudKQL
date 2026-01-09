@@ -1,5 +1,5 @@
 > <https://github.com/ml58158/Demystifying-KQL/tree/main/Advanced>
-> `Demystifying-KQL and Advanced KQL for ThreatHunters.pdf training by the above link`
+> - `Demystifying-KQL and Advanced KQL for ThreatHunters.pdf training by the above link`
 
 
 # KQL Repository
