@@ -1,6 +1,6 @@
 //General alert showing all activity
 SigninLogs
-| where UserPrincipalName contains "strategic" //replace with the breakglass account username
+| where UserPrincipalName contains "acmeadmin" //replace with the breakglass or admin account username
 | project TimeGenerated, UserPrincipalName, IPAddress, DeviceDetail, countryOrRegion = tostring(LocationDetails.countryOrRegion), city = tostring(LocationDetails.city)
 
 
