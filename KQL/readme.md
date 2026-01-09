@@ -194,7 +194,7 @@ InsightsMetrics
 ### 30‑Day Disk Growth Trend
 
 ```kql
-let targetVM = "RMG-AHS-SQL01";ACME-SQL01ics
+let targetVM = "ACME-AHS-SQL01";ACME-SQL01ics
 | where TimeGenerated >= ago(30d)
 | where Namespace == "LogicalDisk" and Name == "FreeSpacePercentage"
 | extend Disk = tostring(todynamic(Tags)["vm.azm.ms/mountId"])
@@ -704,11 +704,5 @@ AzureActivity logs demand **layered parsing**—expect to parse more than once.
 
 ---
 
-**Status:** Public-safe (ACME placeholders)
 
-**Recommended Next Steps:**
-
-* Convert into Sentinel Analytics Rule
-* Add severity thresholds
-* Pair with change-management alerts
 
