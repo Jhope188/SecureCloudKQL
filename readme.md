@@ -10,6 +10,8 @@
 
 
 
+## KQL Reference Library
+
 This document consolidates and organizes all provided KQL queries into logical alerting and analysis categories for Azure Monitor, Log Analytics, Sentinel, and Defender.
 
 ---
