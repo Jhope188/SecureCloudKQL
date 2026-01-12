@@ -2,11 +2,45 @@
 
 **Tags:** `#KQL` `#KQLAlerts` `#AzureAlerts`
 
+## Blog Post on KQL
+
+- https://medium.com/@jhope188/security-that-scales-designing-repeatable-azure-alerts-with-kql-858261321397
+- https://medium.com/@jhope188/securecloudfoundation-the-overlooked-power-of-azure-in-identity-security-004407311610
+  
+
 
 ## What is KQL
 
 ![LearnKQL](https://github.com/Jhope188/SecureCloudKQL/blob/main/Images/AzureKQLImage.png)
 
+<https://learn.microsoft.com/en-us/kusto/query/?view=microsoft-fabric>
+
+`KQL stands for Kusto Query Language`
+
+It’s a read-only query language used to search, analyze, and visualize large volumes of log and telemetry data in Microsoft cloud services.
+
+`What is KQL used for?`
+
+KQL is used anywhere Microsoft stores time-series or event-based data, including:
+- Azure Log Analytics
+- Microsoft Sentinel
+- Microsoft Defender (Endpoint, Identity, M365, Cloud Apps)
+- Application Insights
+- Entra ID (Azure AD) Audit & Sign-in logs
+- Azure Monitor
+
+> If it’s logs in Azure or Microsoft security tooling, KQL is how you query it.
+
+`What does KQL actually do?`
+
+KQL lets you:
+- Filter events (where)
+- Search text (contains, has)
+- Transform data (extend, parse_json)
+- Aggregate results (summarize)
+- Correlate events (join)
+- Sort and shape output (project, order by)
+- Create alerts, workbooks, and dashboards
 
 
 
