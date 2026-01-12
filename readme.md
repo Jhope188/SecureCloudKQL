@@ -2,6 +2,13 @@
 
 **Tags:** `#KQL` `#KQLAlerts` `#AzureAlerts`
 
+
+## What is KQL
+
+![LearnKQL](https://github.com/Jhope188/SecureCloudKQL/blob/main/Images/AzureKQLImage.png)
+
+
+
 This document consolidates and organizes all provided KQL queries into logical alerting and analysis categories for Azure Monitor, Log Analytics, Sentinel, and Defender.
 
 ---
